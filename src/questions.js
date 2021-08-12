@@ -32,6 +32,12 @@ const questions = {
         name: 'school',
         message: 'What school does the intern attend? ',
     },
+    endingQuestion: {
+        type: 'list',
+        name: 'more',
+        message: 'Do you have additional team members you would like to add? ',
+        choices: ['Yes', 'No'],
+    },
 }
 
 module.exports = questions;
