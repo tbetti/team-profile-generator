@@ -1,0 +1,26 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Generate a webpage that contains information on each team member",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jest": "^27.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbetti/team-profile-generator.git"
+  },
+  "author": "Tiana Bettinson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tbetti/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/tbetti/team-profile-generator#readme"
+}
