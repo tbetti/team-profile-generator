@@ -19,7 +19,7 @@ describe('Engineer class', () =>{
             expect(engineer.email).toBe(email);
         })
         it('should return an object containing a GitHub username', () =>{
-            expect(engineer.gitHub).toBe(gitHub);
+            expect(engineer.github).toBe(gitHub);
         })
     })
     describe('getGithub function', () =>{
