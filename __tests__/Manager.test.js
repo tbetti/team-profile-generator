@@ -1,3 +1,4 @@
+const { describe, it, expect } = require('@jest/globals');
 const Manager = require('../lib/Manager.js');
 
 const name = 'Tiana';
@@ -19,6 +20,13 @@ describe('Manager class', () =>{
         })
         it('should return an object containing office number', () =>{
             expect(manager.officeNumber).toBe(officeNumber);
+        })
+    })
+    describe('getRole function', () => {
+        it('should return "Manager"', () =>{
+            const manager = new Manager(name, id, email, officeNumber);
+
+            expect(manager.getRole()).toEqual('Manager');
         })
     })
 })
