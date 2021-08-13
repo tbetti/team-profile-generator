@@ -1,27 +1,31 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
-const path = require('path');
 const questions = require('./src/questions')
+//const createCard = require('./src/htmlBody');
 const generateHtml = require('./src/generateHtml');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const { info } = require('console');
+const Employee = require('./lib/Employee');
+let id = 0;
 
-//Create HTML file in ./lib directory
+const fs = require('fs');
+const path = require('path');
+
+// Create HTML
 function writeToFile(fileName, data){
-    return fs.writeFileSync(path.join('./lib', fileName), data);
+    return fs.writeFileSync(path.join('./lib/', fileName), data);
 }
 
 // Prompt user for input and write to HTML file
 function initInquire(){
+    writeToFile('/team-profile.html', generateHtml);
+    id++
     inquirer
     .prompt(questions.employeeQuestions)
     .then(data =>{
         // export data to variables to be used outside of function
         // based on role, ask additional questions and read data
         const additionalInfo = checkRole(data);
-        //writeToFile('/team-profile.html', generateHtml(data, additionalInfo));
     })
     .catch(err =>{
         console.log(err);
@@ -33,8 +37,10 @@ function checkRole(data){
         inquirer
         .prompt(questions.managerQuestions)
         .then(additionalData=>{
-            const manager = new Manager(data.name, data.id, data.email, additionalData.officeNumber);
+            const manager = new Manager(data.name, id, data.email, additionalData.officeNumber);
             console.log(manager);
+            // Attach info to HTML
+            //createCard(manager);
             askEndingQuestion();
         })
     }
@@ -42,8 +48,9 @@ function checkRole(data){
         inquirer
         .prompt(questions.engineerQuestions)
         .then(additionalData=>{
-            const engineer = new Engineer(data.name, data.id, data.email, additionalData.github);
+            const engineer = new Engineer(data.name, id, data.email, additionalData.github);
             console.log(engineer);
+            // Attach info to HTML
             askEndingQuestion();
         })
     }
@@ -51,10 +58,17 @@ function checkRole(data){
         inquirer
         .prompt(questions.internQuestions)
         .then(additionalData=>{
-            const intern = new Intern(data.name, data.id, data.email, additionalData.school);
+            const intern = new Intern(data.name, id, data.email, additionalData.school);
             console.log(intern);
+            // Attach info to HTML
             askEndingQuestion();
         })
+    }
+    if(data.role === 'Other'){
+        const other = new Employee(data.name, id, data.email);
+        console.log(other);
+        // Attach info to HTML
+        askEndingQuestion();
     }
 }
 
