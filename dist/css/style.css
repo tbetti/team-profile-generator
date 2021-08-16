@@ -1,34 +1,38 @@
+/* Set main colors */
+:root{
+    --primary: rgb(228, 111, 111);
+    --secondary: rgb(243, 245, 247);
+}
+
+/* Styling for header */
 .header{
-    background-color: red;
+    background-color: var(--primary);
     text-align: center;
     color: white;
     padding: 0.5%;
 }
 
-/* I need help here getting it to be centered */
+/* Styling for cards and container */
 .card-container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .card{
     width: 28%;
     margin: 2%;
     box-shadow: 0 5px 12px 0 grey, 0 5px 0px 0 grey;
+    background-color: var(--secondary);
 }
-
 .card-header{
     background-color: lightseagreen;
     color: white;
     padding: 4%;
 }
-
 .card-heading{
     margin-top: 0px;
     margin-bottom: 3%;
 }
-
 .card-info{
     margin: 10%;
 }
