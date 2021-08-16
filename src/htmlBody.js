@@ -1,3 +1,6 @@
+// <i class='bi bi-cup'></i>
+// <i class='bi bi-eyeglasses'></i>
+// <i class='bi bi-graduation-cap'></i>
 //Create Card
 function createCard(obj){
     // Create card header
@@ -7,12 +10,7 @@ function createCard(obj){
         ${cardName}
         ${cardRole}
     </div>`;
-    // let cardHeader = $('<div>').addClass('card-header');
-    // let cardName = $('<h2>').text(object.name).attr('id', `name-${object.id}`); // set id to name-i
-    // let cardRole = $('<h3>').text(object.role).attr('id', `role-${object.id}`); // set id to role-i
-    // cardHeader.append(cardName).append(cardRole);
-
-    ////////////////////////////////////////////////////////////////
+    
     // Create card info section
     let cardId = `<li class='list-group-item' id='id-number-${obj.id}'><b>Id: </b>${obj.getId()}</li>`
     let cardEmail = `<li class = 'list-group-item' id='email-${obj.id}'><b>Email: </b>${obj.getEmail()}</li>`
@@ -26,26 +24,13 @@ function createCard(obj){
         ${infoList}
     </div>`;
     
-    // let cardInfo = $('<div>').addClass('card-info');
-    // let infoList = $('<ul>').attr('id', `info-list-${object.id}`); // set id to info-list-i
-    // let cardId = $('<li>').text(`Id: ${object.id}`).attr(`id-number-${object.id}`); // set id to id-i
-    // let cardEmail = $('<li>').text(`Email: ${object.email}`).attr(`email-${object.id}`); // set id to email-i
-    // infoList.append(cardId).append(cardEmail);
-    // cardInfo.append(infoList);
-    
     // Append header and info sections to card
     let card = `<div class='card'>
         ${cardHeader}
         ${cardInfo}
     </div>`
-    
-    // let card = $('<div>').addClass('card');
-    // card.append(cardHeader).append(cardInfo);
 
     return card;
-
-    // const cardContainer = $('.card-container');
-    // cardContainer.append(card);
 }
 
 function roleSpecific(obj){

@@ -36,7 +36,7 @@ describe('Employee class', () =>{
         it('should return the email@email.com', () =>{
             const employee = new Employee(name, id, email);
 
-            expect(employee.getEmail()).toEqual('email@email.com');
+            expect(employee.getEmail()).toEqual("<a href='mailto:email@email.com' target='_blank'>email@email.com</a>");
         })
     })
     describe('getRole function', () =>{

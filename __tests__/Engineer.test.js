@@ -26,7 +26,7 @@ describe('Engineer class', () =>{
         it('should return "lab"', () =>{
             const engineer = new Engineer(name, id, email, gitHub);
 
-            expect(engineer.getGithub()).toEqual('lab');
+            expect(engineer.getGithub()).toEqual("<a href='https://github.com/lab' target='_blank'>lab</a>");
         })
     })
     describe('getRole function', () =>{

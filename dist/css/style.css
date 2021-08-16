@@ -8,15 +8,13 @@
 /* I need help here getting it to be centered */
 .card-container{
     display: flex;
-    justify-content: space-around;
-    width: 90%;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-top: 4%;
 }
 
 .card{
-    width: 30%;
-    margin-bottom: 3%;
+    width: 28%;
+    margin: 2%;
     box-shadow: 0 5px 12px 0 grey, 0 5px 0px 0 grey;
 }
 
@@ -29,4 +27,8 @@
 .card-heading{
     margin-top: 0px;
     margin-bottom: 3%;
+}
+
+.card-info{
+    margin: 10%;
 }
