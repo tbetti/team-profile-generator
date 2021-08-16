@@ -1,6 +1,3 @@
-// 
-// 
-// <i class='bi bi-graduation-cap'></i>
 //Create Card
 function createCard(obj){
     // Create card header

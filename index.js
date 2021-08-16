@@ -1,4 +1,8 @@
+// Read in packages
 const inquirer = require('inquirer');
+const fs = require('fs');
+const path = require('path');
+// Read in other files
 const questions = require('./src/questions')
 const createCard = require('./src/htmlBody');
 const generateHtml = require('./src/generateHtml');
@@ -6,12 +10,11 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Employee = require('./lib/Employee');
+// Define variables
 const team = [];
 const teamArr = [];
 let id = 0;
 
-const fs = require('fs');
-const path = require('path');
 
 // Create HTML
 function writeToFile(fileName, data){
@@ -30,7 +33,6 @@ function initInquire(){
     inquirer
     .prompt(questions.employeeQuestions)
     .then(data =>{
-        // export data to variables to be used outside of function
         // based on role, ask additional questions and read data
         checkRole(data);
     })
