@@ -29,7 +29,7 @@ const questions = {
     managerQuestions: {
         type: 'input',
         name: 'officeNumber',
-        message: 'What is the manager\'s office number? ',
+        message: 'What is the manager\'s office number? (enter without hyphens or spaces)',
         validate: (answer) =>{
             const pass = answer.match(/^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/);
             if(pass) return true;
