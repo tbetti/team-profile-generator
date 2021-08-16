@@ -1,8 +1,8 @@
 //Create Card
 function createCard(obj){
     // Create card header
-    let cardName = `<h2 class='name' id='name-${obj.id}'>${obj.name}</h2>`;
-    let cardRole = `<h3 class='role' id='role-${obj.id}'>${obj.role}</h3>`;
+    let cardName = `<h2 class='name card-heading' id='name-${obj.id}'>${obj.name}</h2>`;
+    let cardRole = `<h3 class='role card-heading' id='role-${obj.id}'>${obj.role}</h3>`;
     let cardHeader = `<div class='card-header'>
         ${cardName}
         ${cardRole}
@@ -14,10 +14,10 @@ function createCard(obj){
 
     ////////////////////////////////////////////////////////////////
     // Create card info section
-    let cardId = `<li id='id-number-${obj.id}'><b>Id: </b>${obj.getId()}</li>`
-    let cardEmail = `<li id='email-${obj.id}'><b>Email: </b>${obj.getEmail()}</li>`
+    let cardId = `<li class='list-group-item' id='id-number-${obj.id}'><b>Id: </b>${obj.getId()}</li>`
+    let cardEmail = `<li class = 'list-group-item' id='email-${obj.id}'><b>Email: </b>${obj.getEmail()}</li>`
     let additionalInfo = roleSpecific(obj);
-    let infoList = `<ul class="info-list" id='info-list-${obj.id}'>
+    let infoList = `<ul class="info-list list-group list-group-flush" id='info-list-${obj.id}'>
         ${cardId}
         ${cardEmail}
         ${additionalInfo}
@@ -52,13 +52,13 @@ function roleSpecific(obj){
     let text;
     switch (obj.role){
         case 'Manager':
-            text = `<li id='office-${obj.id}'><b>Office Number: </b>#${obj.officeNumber}</li>`;
+            text = `<li class='list-group-item' id='office-${obj.id}'><b>Office Number: </b>#${obj.officeNumber}</li>`;
             break;
         case 'Engineer':
-            text = `<li id='github-${obj.id}'><b>Github: </b>${obj.getGithub()}</li>`;
+            text = `<li class='list-group-item' id='github-${obj.id}'><b>Github: </b>${obj.getGithub()}</li>`;
             break;
         case 'Intern':
-            text = `<li id='school-${obj.id}'><b>School: </b>${obj.getSchool()}</li>`;
+            text = `<li class='list-group-item' id='school-${obj.id}'><b>School: </b>${obj.getSchool()}</li>`;
             break;
         default:
             text = ``;
