@@ -47,7 +47,6 @@ function checkRole(data){
         .then(additionalData=>{
             const manager = new Manager(data.name, id, data.email, additionalData.officeNumber);
             team.push(manager);
-            console.log(team);
             askEndingQuestion();
         })
     }
@@ -57,7 +56,6 @@ function checkRole(data){
         .then(additionalData=>{
             const engineer = new Engineer(data.name, id, data.email, additionalData.github);
             team.push(engineer);
-            console.log(team);
             askEndingQuestion();
         })
     }
@@ -67,14 +65,12 @@ function checkRole(data){
         .then(additionalData=>{
             const intern = new Intern(data.name, id, data.email, additionalData.school);
             team.push(intern);
-            console.log(team);
             askEndingQuestion();
         })
     }
     if(data.role === 'Other'){
         const other = new Employee(data.name, id, data.email);
         team.push(other);
-        console.log(team);
         askEndingQuestion();
     }
 }
@@ -89,7 +85,6 @@ function askEndingQuestion(){
             fillCardContainer(team);
             writeToFile('/team-profile.html', generateHtml(teamArr.join('\n')));
             console.log('Done', teamArr);
-            //generateHtml();
         }
     })
 }

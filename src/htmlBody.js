@@ -37,7 +37,7 @@ function roleSpecific(obj){
     let text;
     switch (obj.role){
         case 'Manager':
-            text = `<li class='list-group-item' id='office-${obj.id}'><b>Office Number: </b>#${obj.officeNumber}</li>`;
+            text = `<li class='list-group-item' id='office-${obj.id}'><b>Office Number: </b>${obj.getOfficeNumber()}</li>`;
             break;
         case 'Engineer':
             text = `<li class='list-group-item' id='github-${obj.id}'><b>Github: </b>${obj.getGithub()}</li>`;
