@@ -14,18 +14,13 @@ function createCard(obj){
 
     ////////////////////////////////////////////////////////////////
     // Create card info section
-    let cardId = `<li id='id-number-${obj.id}'>
-        <b>Id: </b>${obj.getId()}
-    </li>`
-    let cardEmail = `<li id='email-${obj.id}'>
-        <b>Email: </b>${obj.getEmail()}
-    </li>`
-    // let additionalInfo = `<li id='additional-${obj.id}'>
-    //     <b>Additional Info: </b>${obj.additional}
-    //     </li>`
+    let cardId = `<li id='id-number-${obj.id}'><b>Id: </b>${obj.getId()}</li>`
+    let cardEmail = `<li id='email-${obj.id}'><b>Email: </b>${obj.getEmail()}</li>`
+    let additionalInfo = roleSpecific(obj);
     let infoList = `<ul class="info-list" id='info-list-${obj.id}'>
         ${cardId}
         ${cardEmail}
+        ${additionalInfo}
     </ul>`;
     let cardInfo = `<div class='card-info'>
         ${infoList}
@@ -51,6 +46,24 @@ function createCard(obj){
 
     // const cardContainer = $('.card-container');
     // cardContainer.append(card);
+}
+
+function roleSpecific(obj){
+    let text;
+    switch (obj.role){
+        case 'Manager':
+            text = `<li id='office-${obj.id}'><b>Office Number: </b>#${obj.officeNumber}</li>`;
+            break;
+        case 'Engineer':
+            text = `<li id='github-${obj.id}'><b>Github: </b>${obj.getGithub()}</li>`;
+            break;
+        case 'Intern':
+            text = `<li id='school-${obj.id}'><b>School: </b>${obj.getSchool()}</li>`;
+            break;
+        default:
+            text = ``;
+    }
+    return text;
 }
 
 module.exports = createCard;

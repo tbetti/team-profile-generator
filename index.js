@@ -15,7 +15,7 @@ const path = require('path');
 
 // Create HTML
 function writeToFile(fileName, data){
-    return fs.writeFileSync(path.join('./lib/', fileName), data);
+    return fs.writeFileSync(path.join('./dist/', fileName), data);
 }
 
 function fillCardContainer(team){
