@@ -1,4 +1,4 @@
-function generateHtml(){
+function generateHtml(card){
     return `<!DOCTYPE html>
 <html>
     <head>
@@ -9,14 +9,15 @@ function generateHtml(){
     </head>
     <body>
         <header class="header">
-            <h3>Team Profile</h3>
+            <h1>Team Profile</h1>
         </header>
-        <div class="card-container"></div>
+        <div class="card-container">
+            ${card}
+        </div>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="../src/htmlBody.js"></script>
     </body>
-</html>
-    `
+</html>`
 }
 
-module.exports = generateHtml();
+module.exports = generateHtml;
