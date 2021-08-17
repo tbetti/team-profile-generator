@@ -14,10 +14,10 @@
   The Team Profile Generator allows users to create a custom HTML file after answering a series of prompts about their teammates.
 
   ## Installation
-  Ensure you have Node.js downloaded on your computer. Download the Develop file and open in your source code editor.  Open a new terminal connected to the Develop folder.  Run npm install to ensure you have all dependencies (specifically Inquirer and Jest) installed and ready to use. 
+  Ensure you have Node.js downloaded on your computer. Download all folders and files and open in your source code editor.  Open a new terminal connected to the your downloaded folder.  Run npm install to ensure you have all dependencies (specifically Inquirer and Jest) installed and ready to use. 
 
   ## Usage
-  Once you have all necessary folders and packages installed, type “npm start” into the terminal. Answer the prompts that follow. When finished, the program will create your custom HTML file in the “dist” folder.
+  Once you have all necessary folders and packages installed, type “npm start” into the terminal. Answer the prompts that follow. When finished, the program will create your custom HTML file in the “dist” folder. See [video](https://youtu.be/biepF5BHZqw) here.
 
   ## License
   This project is registered under the [MIT License](/LICENSE)
